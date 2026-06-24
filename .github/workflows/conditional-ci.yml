@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Build Job
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository code
@@ -15,7 +15,7 @@ jobs:
         run: echo "Building the project..."
 
   test:
-    name: Test Job
+    name: test
     needs: build
     if: startsWith(github.ref, 'refs/heads/feature/') && success()
     runs-on: ubuntu-latest
